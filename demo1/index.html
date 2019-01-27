@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS导航的制作</title>
+    <style>
+        .wrap {
+            width: 300px;
+            float: left;
+
+        }
+        .wrap:after {
+            content:"";
+            display: block;
+            clear:both;
+            heigth: 0;
+            visibility: hidden;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            float: left;
+            border: 1px solid olivedrab;
+            background-color: aqua;
+            overflow: scroll;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid olivedrab;
+            background-color: aliceblue;
+        }
+        .box2 {
+            width: 130px;
+            height: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid olivedrab;
+            background-color: aliceblue;
+
+        }
+        .data {
+            width:300px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+            background-color: beige;
+
+        }
+
+        .data:after {
+            content:"";
+            display: block;
+            clear:both;
+            heigth: 0;
+            visibility: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "wrap">
+    <h3>示例代码1</h3>
+    <h4>无滚动条，正常布局</h4>
+
+    <div class = "box" style="text-align:center;overflow:auto;">
+
+        <span style="color:olivedrab; ">1</span>
+        <div class="box1">
+            <span style="color:olivedrab; line-height: 100px;">box1</span>
+        </div>
+    </div>
+    <h3>示例代码2</h3>
+    <h4>有滚动条</h4>
+    <div class = "box" style="text-align:center;">
+        <span style="color:olivedrab; ">1</span>
+        <div class="box2">
+            <span style="color:olivedrab; line-height: 100px;">box2</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="data">
+    </div>
+</body>
+<script>
+    var box1 = document.getElementsByClassName("box1")[0];
+    var box2 = document.getElementsByClassName("box2")[0];
+    var box1Data = window.getComputedStyle(box1);
+    var box2Data = window.getComputedStyle(box2);
+    var data = document.getElementsByClassName("data")[0];
+    var data1= "box1的相关尺寸数据为："+ "padding: "+box1Data.padding +" margin: " + box1Data.margin +
+        " height: "+ box1Data.height + " width" +box1Data.width +" offsetHeight："+ box1.offsetHeight +" scrollHeight："+
+        box1.scrollHeight  +" clientHeight: " + box1.clientHeight;
+    var data2 ="box1的相关尺寸数据为："+
+        " padding: "+box2Data.padding +" margin: " + box2Data.margin +" height: "+ box2Data.height  + " width: " +box2Data.width+" offsetHeight："+ box2.offsetHeight+
+        " scrollHeight："+ box2.scrollHeight +" clientHeight:"  + box2.clientHeight;
+    data.append(data1);
+    data.append(data2);
+</script>
+</html>
