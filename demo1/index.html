@@ -22,7 +22,6 @@
             float: left;
             border: 1px solid olivedrab;
             background-color: aqua;
-            overflow: scroll;
         }
         .box1 {
             width: 100px;
@@ -34,12 +33,13 @@
             background-color: aliceblue;
         }
         .box2 {
-            width: 130px;
-            height: 300px;
+            width: 100px;
+            height: 100px;
             margin: 10px;
             padding: 10px;
             border: 1px solid olivedrab;
             background-color: aliceblue;
+            overflow: scroll;
 
         }
         .data {
@@ -96,7 +96,7 @@
     var data1= "box1的相关尺寸数据为："+ "padding: "+box1Data.padding +" margin: " + box1Data.margin +
         " height: "+ box1Data.height + " width" +box1Data.width +" offsetHeight："+ box1.offsetHeight +" scrollHeight："+
         box1.scrollHeight  +" clientHeight: " + box1.clientHeight;
-    var data2 ="box1的相关尺寸数据为："+
+    var data2 =" box2的相关尺寸数据为："+
         " padding: "+box2Data.padding +" margin: " + box2Data.margin +" height: "+ box2Data.height  + " width: " +box2Data.width+" offsetHeight："+ box2.offsetHeight+
         " scrollHeight："+ box2.scrollHeight +" clientHeight:"  + box2.clientHeight;
     data.append(data1);
